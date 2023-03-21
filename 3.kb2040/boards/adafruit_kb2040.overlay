@@ -1,0 +1,24 @@
+/ {
+    chosen {
+        zephyr,console = &cdc_acm_uart0;
+        zephyr,shell-uart = &cdc_acm_uart0;
+    };
+
+    aliases {
+        led0 = &led_blue;
+    };
+
+    leds {
+        compatible = "gpio-leds";
+        led_blue: led_0 {
+            gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;
+                };
+    };
+
+};
+
+&zephyr_udc0 {
+    cdc_acm_uart0: cdc_acm_uart0 {
+        compatible = "zephyr,cdc-acm-uart";
+    };
+};
