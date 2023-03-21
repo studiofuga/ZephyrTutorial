@@ -1,0 +1,14 @@
+/ {
+    aliases {
+        led0 = &led_blue;
+    };
+
+    leds {
+        compatible = "gpio-leds";
+        led_blue: led_0 {
+            gpios = <&gpio0 13 GPIO_ACTIVE_LOW>;
+        };
+    };
+
+};
+
